@@ -1,2 +1,5 @@
-# js-algorithms-demo-
-Demo repository for JS Algorithms Course
+# javascript-algorithms-review
+
+Repository for JS Algorithms Review Course from Scotch Io
+
+
