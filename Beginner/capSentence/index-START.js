@@ -5,12 +5,31 @@ return the equivalent of the sentence when capitalised. E.g
 */
 
 
+// using forEach() method
 
+capSentence = text => {
+  let wordsArray = text.toLowerCase().split(' ')
+  let capsArray = []
 
-function capSentence(text) {
-   // Code goes here
+  wordsArray.forEach(word => capsArray.push(word[0].toUpperCase() + word.slice(1)));
+
+  return capsArray.join(' ')
 }
 
+// Using .map() and .slice() method
 
+capSentence =  text => {
+  let wordsArray = text.toLowerCase().split(' ')
+  let capsArray = wordsArray.map(word => word[0].toUpperCase() + word.slice(1))
+  return capsArray.join(' ')
+}
+
+// Using .map() and .replace() method
+
+capSentence = text => {
+  let wordsArray = text.toLowerCase().split(' ')
+  let capsArray = wordsArray.map(word => word.replace(word[0], word[0].toUpperCase()))
+  return capsArray.join(' ')
+}
 
 module.exports = capSentence
