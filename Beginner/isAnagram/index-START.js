@@ -15,11 +15,23 @@ function isAnagram(stringA, stringB) {
 }
 
 
-// module.exports = isAnagram
+module.exports = isAnagram
 
 //Character Map Comparison
 
 function isAnagram(stringA, stringB) {
+
+    if (stringA.length === stringB.length) {
+        let stringAMap = createCharMap(stringA)
+        let stringBMap = createCharMap(stringB)
+
+        for (let char in stringAMap) {
+            if(stringAMap[char] !== stringBMap[char]) return false
+        }
+        return true
+    } else {
+        return false
+    }
 
     function createCharMap(text) {
         let charMap = {}
@@ -32,20 +44,6 @@ function isAnagram(stringA, stringB) {
             }
         }
         return charMap
-    }
-
-    if (stringA.length === stringB.length) {
-        let stringAMap = createCharMap(stringA)
-        let stringBMap = createCharMap(stringB)
-
-        for (let char in stringMap) {
-            if(stringAMap[char] !== stringBMap[char]) {
-                return false
-            }
-        }
-        return true
-    } else {
-        return false
     }
 }
 
